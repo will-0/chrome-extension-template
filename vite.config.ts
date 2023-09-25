@@ -2,6 +2,7 @@ import { defineConfig } from 'vite'
 import { crx } from '@crxjs/vite-plugin'
 import react from '@vitejs/plugin-react'
 import zipPack from 'vite-plugin-zip-pack';
+import path from 'path'
 
 import manifest from './src/manifest'
 //@ts-ignore
@@ -18,6 +19,15 @@ export default defineConfig(({ mode }) => {
         output: {
           chunkFileNames: 'assets/chunk-[hash].js',
         },
+      },
+    },
+
+    resolve: {
+      alias: {
+        '@': path.resolve(__dirname, './src'),
+        '@state': path.resolve(__dirname, './src/state'),
+        '@anki': path.resolve(__dirname, './src/anki'),
+        '@common': path.resolve(__dirname, './src/common'),
       },
     },
 

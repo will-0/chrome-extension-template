@@ -6,7 +6,7 @@ function App() {
 
   return (
     <main>
-      <h3>My Popup Page!</h3>
+      <h3>Popup Page!</h3>
 
       <h6>v 0.0.0</h6>
 
