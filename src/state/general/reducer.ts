@@ -1,16 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
-
-// State definition
-
-type GeneralState = {
-    isActive: boolean
-    isFetching: boolean
-}
-
-const initialState: GeneralState = {
-  isActive: false,
-  isFetching: false
-}
+import initialState from './initialState'
 
 // Actions and Reducers
 
@@ -38,5 +27,4 @@ const generalStateSlice = createSlice({
   }
 })
 
-export const { setActive, setInactive, reset } = generalStateSlice.actions
-export default generalStateSlice.reducer
+export default generalStateSlice

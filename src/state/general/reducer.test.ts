@@ -1,4 +1,5 @@
-import generalReducer from "./general";
+import generalReducer from "./";
+import { setActive } from "./";
 
 describe("General State Reducers", () => {
     describe("setActive", () => {
@@ -11,7 +12,7 @@ describe("General State Reducers", () => {
                 isActive: true,
                 isFetching: false
             }
-            expect(generalReducer(initialState, { type: "general/setActive" })).toEqual(expectedState)
+            expect(generalReducer(initialState, setActive())).toEqual(expectedState)
         })
     })
 })
