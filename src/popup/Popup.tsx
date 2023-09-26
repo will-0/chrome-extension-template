@@ -1,18 +1,29 @@
 import { useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { extensionIsActiveSelector, setActive, setInactive } from '@state/general'
 import './Popup.css'
 
 function App() {
-  const [crx, setCrx] = useState('create-chrome-ext')
+  const dispatch = useDispatch()
+  const isActive = useSelector(extensionIsActiveSelector)
+  const onButtonClick = () => {
+    if (isActive) {
+      dispatch(setInactive())
+    } else {
+      dispatch(setActive())
+    }
+  }
+
 
   return (
     <main>
-      <h3>Popup Page!</h3>
+      <h3>Extension is {isActive ? "Active" : "Inactive"}</h3>
 
       <h6>v 0.0.0</h6>
 
-      <a href="https://www.npmjs.com/package/create-chrome-ext" target="_blank">
-        Power by {crx}
-      </a>
+
+
+      <button onClick={onButtonClick}>Toggle Active State</button>
     </main>
   )
 }

@@ -1,9 +1,9 @@
 import {
-  setupReduxed, ReduxedSetupOptions
+  setupReduxed, ReduxedSetupOptions, ReduxedSetupListeners
 } from 'reduxed-chrome-storage';
 import { configureStore } from '@reduxjs/toolkit';
 
-import generalStateReducer from './features/general'
+import generalStateReducer from './general'
 
 const storeCreatorContainer = (preloadedState?: any) => {
   return configureStore({
@@ -17,5 +17,7 @@ const storeCreatorContainer = (preloadedState?: any) => {
 const options: ReduxedSetupOptions = {};
 
 const instantiateStore = setupReduxed(storeCreatorContainer, options);
+const instantiateStoreServiceWorker = (listeners: ReduxedSetupListeners) => setupReduxed(storeCreatorContainer, options, listeners)
 
 export default instantiateStore;
+export { instantiateStoreServiceWorker }
