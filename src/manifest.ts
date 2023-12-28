@@ -17,7 +17,7 @@ export default defineManifest({
   },
   options_page: 'options.html',
   background: {
-    service_worker: 'src/background/index.ts',
+    service_worker: 'src/serviceworker/index.ts',
     type: 'module',
   },
   content_scripts: [
