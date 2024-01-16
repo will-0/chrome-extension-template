@@ -1,6 +1,6 @@
-# extensiontest
+# Chrome Extension Template
 
-> a chrome extension tools built with Vite + React-ts, and Manifest v3
+This is the template I personally use for creating Chrome extensions. Taken from https://github.com/guocaoyi/create-chrome-ext/tree/main/template-react-ts and https://github.com/hindmost/reduxed-chrome-storage.
 
 ## Installing
 
@@ -13,7 +13,7 @@
 run the command
 
 ```shell
-$ cd extensiontest
+$ cd chrome-extension-template
 
 $ npm run dev
 ```
